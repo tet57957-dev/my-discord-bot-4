@@ -3,7 +3,7 @@ from discord.ext import commands
 import os, random, datetime
 TOKEN = os.getenv("DISCORD_TOKEN_3") or os.getenv("DISCORD_TOKEN")
 OWNER_ID = 1395077285362794550
-# ไม่ใช้ Flask แล้ว ตัดออกเพื่อให้ Deploy ผ่าน 100%
+# Flask removed - no need
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents, help_command=None)
 
@@ -207,19 +207,10 @@ async def ask_cmd(ctx, *, q=None):
     await ctx.send(_r.choice([f"เรื่อง '{q}' ผมว่าดีนะ","ไม่แน่ใจ ลองถามคนอื่นดู","ใช่เลย","ไม่น่าใช่"]))
 
 # --- เพิ่มให้ครบ 46 คำสั่ง ---
-@bot.command(name="8ball")
-async def ball8_cmd(ctx, *, q=None):
-    import random as _r
-    await ctx.send(f"🎱 {_r.choice(['ใช่เลย','ไม่น่าใช่','ชัวร์','ลองเสี่ยงดู','ไม่รู้ดิ','แน่นอน','50/50'])}")
 @bot.command(name="coinflip")
 async def coinflip_cmd(ctx):
     import random as _r
     await ctx.send(f"🪙 ออก **{_r.choice(['หัว','ก้อย'])}**")
-@bot.command(name="love")
-async def love_cmd(ctx, member: discord.Member = None):
-    import random as _r
-    if not member: await ctx.send("❌ พิมพ์ !love @คน"); return
-    await ctx.send(f"💕 {ctx.author.display_name} ❤️ {member.display_name} {_r.randint(0,100)}%")
 @bot.command(name="roast")
 async def roast_cmd(ctx, member: discord.Member = None):
     import random as _r
