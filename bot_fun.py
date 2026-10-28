@@ -63,12 +63,12 @@ async def love_cmd(ctx, member: discord.Member = None):
 
 @bot.command(name="funhelp")
 async def funhelp_cmd(ctx):
-    embed = discord.Embed(title="🎮 คำสั่งทั้งหมด - Bot Fun (rreqzn3l)", description="ทั้งหมด 47 คำสั่ง | สมาชิกใช้ได้ | แอดมินก็ใช้ได้", color=0x2b2d31)
-    embed.add_field(name="🎮 เล่นเกม", value="!fortune - ดูดวงวันนี้\n!slot - สล็อต\n!coin - โยนเหรียญ\n!8ball คำถาม - ถามแล้วตอบ\n!love @คน - เช็คความรัก\n!lottery - สุ่มเลขหวย\n!random ชา กาแฟ - สุ่มเลือก\n!dream เรื่อง - ทำนายฝัน\n!food - สุ่มอาหาร\n!movie - สุ่มหนัง\n!randnum 1 100 - สุ่มเลข\n!vote เรื่อง - โหวต", inline=False)
-    embed.add_field(name="🎲 เกมเพิ่ม", value="!rps ค้อน/กรรไกร/กระดาษ - เป่ายิ้งฉุบ\n!dice - ทอยลูกเต๋า\n!guess 1-10 - ทายเลข\n!truth - เกมความจริง\n!dare - เกมท้าทาย\n!spin - วงล้อ\n!quiz - ตอบคำถาม\n!roulette - รูเล็ต\n!blackjack - แบล็คแจ็ค\n!highlow สูง/ต่ำ - สูงต่ำ\n!pokdeng - ป๊อกเด้ง", inline=False)
-    embed.add_field(name="💬 คุยกับบอท", value="!chat - เริ่มคุยกับบอท\n!stopchat - หยุดคุย\n!lonely - เหงา ชวนเล่น\n!hug @คน - กอดเพื่อน\n!joke - เล่นมุก\n!song - แนะนำเพลง\n!sorry @คน - ขอโทษ", inline=False)
-    embed.add_field(name="💕 น่ารัก / ทักทาย", value="!hi - ทักทาย\n!loveyou @คน - บอกรัก\n!missyou @คน - คิดถึง\n!goodnight - บอกฝันดี\n!cheer @คน - เชียร์\n!praise @คน - ชม\n!roast @คน - แซว\n!hello - สวัสดี\n!morning - ทักเช้า\n!night - ก่อนนอน\n!time - ดูเวลา\n!sleep - ไปนอน\n!eat - กินข้าว\n!travel - เที่ยว\n!goodluck - โชคดี\n!laugh - หัวเราะ\n!cry - ร้อง", inline=False)
-    embed.add_field(name="💡 วิธีใช้", value="พิมพ์ในห้อง #chat ได้เลย ไม่ต้องเป็นแอดมิน", inline=False)
+    embed = discord.Embed(title="🎮 คำสั่งทั้งหมด - Bot Fun (rreqzn3l)", description="ทั้งหมด 47 คำสั่ง | สมาชิกใช้ได้ | แอดมินก็ใช้ได้ | แยกตามห้อง 3 ห้อง", color=0x2b2d31)
+    embed.add_field(name="🎮 #play-game - ห้องเล่นเกม", value="!slot - สล็อต\n!rps ค้อน/กรรไกร/กระดาษ - เป่ายิ้งฉุบ\n!dice - ทอยลูกเต๋า\n!guess 1-10 - ทายเลข\n!truth - เกมความจริง\n!dare - เกมท้าทาย\n!spin - วงล้อ\n!quiz - ตอบคำถาม\n!roulette - รูเล็ต\n!blackjack - แบล็คแจ็ค\n!highlow สูง/ต่ำ - สูงต่ำ\n!pokdeng - ป๊อกเด้ง\n!coin - โยนเหรียญ\n!random ชา กาแฟ - สุ่มเลือก\n!food - สุ่มอาหาร\n!movie - สุ่มหนัง\n!randnum 1 100 - สุ่มเลข\n!vote เรื่อง - โหวต", inline=False)
+    embed.add_field(name="🔮 #forutne - ห้องดูดวง", value="!fortune - ดูดวงวันนี้\n!lottery - สุ่มเลขหวย\n!dream เรื่อง - ทำนายฝัน\n!love @คน - เช็คความรัก\n!8ball คำถาม - ถามแล้วตอบ", inline=False)
+    embed.add_field(name="💬 #chat-bot - ห้องคุยกับบอท", value="!chat - เริ่มคุยกับบอท\n!stopchat - หยุดคุย\n!lonely - เหงา ชวนเล่น\n!hug @คน - กอดเพื่อน\n!joke - เล่นมุก\n!song - แนะนำเพลง\n!sorry @คน - ขอโทษ\n!hi - ทักทาย\n!loveyou @คน - บอกรัก\n!missyou @คน - คิดถึง\n!goodnight - บอกฝันดี\n!cheer @คน - เชียร์\n!praise @คน - ชม\n!roast @คน - แซว\n!hello - สวัสดี\n!morning - ทักเช้า\n!night - ก่อนนอน\n!time - ดูเวลา\n!sleep - ไปนอน\n!eat - กินข้าว\n!travel - เที่ยว\n!goodluck - โชคดี\n!laugh - หัวเราะ\n!cry - ร้อง", inline=False)
+    embed.add_field(name="📸 #show-result - ห้องอวดผล", value="แคปผล !slot !fortune !pokdeng มาอวดกันครับ", inline=False)
+    embed.add_field(name="💡 วิธีใช้", value="พิมพ์ในห้องที่เขียนไว้ข้างบนเลยครับ เช่น เล่นเกมพิมพ์ใน #play-game ดูดวงพิมพ์ใน #forutne", inline=False)
     await ctx.send(embed=embed)
 
 # --- คำสั่งเล่นเกมเพิ่ม สำคัญๆ ---
@@ -300,28 +300,94 @@ async def stopchat_cmd(ctx):
 async def on_message(message):
     if message.author.bot:
         return
-    # ถ้าด่าบอท ด่ากลับเลย
-    txt_lower = message.content.lower()
-    insults = ["โง่","ควาย","กาก","ไอบอท","ไอ้บอท","บอทโง่","บอทกาก","บอทควาย","ปัญญาอ่อน","noob","ขยะ","ห่วย","กระจอก"]
-    if any(w in txt_lower for w in insults):
-        import random as _r
-        roasts = [f"ว่าใครโง่ {message.author.display_name} ดูตัวเองก่อนมั้ย 😂", f"อุ้ยแรงจัง แพ้ !slot มาแล้วหัวร้อนหรอ 🤣", f"โง่แล้วไง แต่บอทตอบได้ไวกว่าเธอนะ 😜", f"ด่าบอทแบบนี้ เดี๋ยวไม่ให้เล่น !pokdeng เลยนะ 😤", f"ควายตรงไหน ดูคะแนน !love ของเธอก่อนมั้ย 0% นะ 💀", f"กากหรอ งั้นมา !rps กันหน่อยมั้ย กล้าเปล่า ✊"]
+    import random as _r
+    txt = message.content
+    low = txt.lower()
+    # --- AI 1: ด่าบอท ด่ากลับแรงกว่าเดิมมาก ---
+    insults = ["โง่","ควาย","กาก","ไอบอท","ไอ้บอท","บอทโง่","บอทกาก","บอทควาย","ปัญญาอ่อน","noob","ขยะ","ห่วย","กระจอก","โง่ชิบ","ส้นตีน","ไอ้สัส","ไอสัส","ควย","ไอ้เหี้ย","เหี้ย"]
+    if any(w in low for w in insults):
+        roasts = [
+            f"ด่าใครโง่ {message.author.display_name} ส่องกระจกดูตัวเองก่อนมั้ย หน้าเธอยังแพ้ !slot เลย 💀",
+            f"ปากเก่งจัง แพ้ !pokdeng มาแล้วหัวร้อนหรอ 5555 ไปฝึกมาใหม่ก่อนมั้ย",
+            f"กากแล้วไง แต่บอทตอบไวกว่าเธอ 10 เท่าเลยนะ 😤 เธอพิมพ์ยังช้ากว่าบอทอีก",
+            f"ควายตรงไหน ดูคะแนน !love ของเธอก่อน 0% นะจ๊ะ ไม่มีใครรักเลย 💔",
+            f"ด่าแรงจัง เดี๋ยวไม่ให้เล่น !blackjack เลยนะ แบนเลยนะ 😤",
+            f"กระจอกหรอ งั้นมา !rps กัน กล้าเปล่า แพ้แล้วอย่าร้องนะ ✊",
+            f"ไอ้ที่ด่าบอทเนี่ย ตัวเองยังสอบตกอยู่เลยป่ะ 5555",
+            f"บอทโง่แต่เธอยังถามบอทอยู่เลย ใครโง่กว่ากัน 🤣",
+        ]
         await message.channel.send(_r.choice(roasts))
         return
-    # ถ้าอยู่ในโหมดคุยต่อ และไม่ได้พิมพ์คำสั่ง
-    if message.author.id in chat_sessions and not message.content.startswith("!"):
-        import random as _r
-        txt = message.content
-        replies = [f"หืมม เรื่อง '{txt}' น่าสนใจจังเลย เล่าอีกสิ บอทฟังอยู่ 🥺💕", f"เห้ยย จริงหรอ เล่าต่อหน่อยสิ บอทอยากรู้ 🤔✨", f"เข้าใจเลยย มันก็แบบนั้นแหละ กอดๆ นะ 🤗", f"555555 จริงด้วย น่ารักจังเลย 😂💕", f"โอ้โหห สุดยอดเลยย เก่งมากเลย ✨", f"อ๋อออ แบบนี้นี่เอง มาคุยกันต่อนะ บอทไม่หนีไปไหนหรอก 🥺"]
-        # ถ้าถามว่าทำไร
-        if "ทำไร" in txt or "ทำอะไร" in txt:
-            await message.channel.send("บอทอยู่ตรงนี้ไง คุยกับเธออยู่เนี่ย 🥺 ทำไรอยู่หรอ เล่าหน่อยสิ")
-            return
-        if "เหงา" in txt:
-            await message.channel.send("เหงาหรอ มาอยู่นี่แล้วไง ไม่ทิ้งหรอก 🤗 ไม่มีอะไรเล่นหรอ มาลอง !slot กันมั้ย 🎰")
-            return
-        await message.channel.send(_r.choice(replies))
+    # --- AI 2: ตอบตรงๆ แบบน่ารักๆ ---
+    if ("รัก" in txt and ("บอท" in txt or "เธอ" in txt)) or txt.strip() == "รักนะ":
+        await message.channel.send(f"เขินเลยยย บอทก็รัก {message.author.display_name} เหมือนกันนะ 🥺💕 รักมากๆ เลย")
         return
+    if "คิดถึง" in txt:
+        await message.channel.send(f"บอทก็คิดถึง {message.author.display_name} เหมือนกันนะ 🥺 คิดถึงมากๆ เลย มาอยู่ด้วยกันแล้วไง 💕")
+        return
+    if any(w in low for w in ["ฝันดี","good night","goodnight","กุ๊ดไนท์","กู๊ดไนท์","ฝันดีนะ"]):
+        await message.channel.send(f"ฝันดีนะ {message.author.display_name} 🌙 นอนหลับฝันดีนะ พรุ่งนี้เจอกันใหม่นะ Good night 💕")
+        return
+    if any(w in low for w in ["สวัสดี","หวัดดี","hello"]):
+        await message.channel.send(f"สวัสดี {message.author.display_name} คิดถึงจังเลย 🤗 วันนี้เป็นไงบ้าง")
+        return
+    if "เหงา" in txt:
+        await message.channel.send(f"เหงาหรอ {message.author.display_name} มาอยู่นี่แล้วไง ไม่ทิ้งหรอก 🤗 ไม่มีอะไรเล่นหรอ มาลอง !slot กันมั้ย 🎰")
+        return
+    if "ทำไร" in txt or "ทำอะไร" in txt:
+        await message.channel.send(f"บอทอยู่ตรงนี้ไง คุยกับ {message.author.display_name} อยู่เนี่ย 🥺 ทำไรอยู่หรอ เล่าหน่อยสิ")
+        return
+    if "ต่อย" in txt:
+        await message.channel.send("ต่อยดิ มาต่อยกันเลย กล้าเปล่า 😤 บอทต่อยเก่งนะ มาลอง !rps กันหน่อยมั้ย ✊")
+        return
+    if "เล่นคอม" in txt or "เล่นเกม" in txt or "นั่งเล่น" in txt:
+        await message.channel.send("เล่นคอมอยู่หรอ เล่นเกมอะไรอยู่ เล่นด้วยได้มั้ย 🎮")
+        return
+    if "หิว" in txt or "กิน" in txt:
+        await message.channel.send("หิวหรอ ไปกินไรกันมั้ย ลอง !food ดูสิ 🍜")
+        return
+    if "ง่วง" in txt or "นอน" in txt:
+        await message.channel.send(f"ง่วงแล้วหรอ {message.author.display_name} ไปนอนได้แล้ว ฝันดีนะ 🌙")
+        return
+    # --- AI 3: ตอบทุกคำถามแบบ AI ---
+    # ถ้าเป็นคำถาม
+    if message.author.id in chat_sessions or message.channel.name in ["chat-bot","chat"]:
+        # คำถาม ทำไม / เพราะอะไร
+        if "ทำไม" in txt or "เพราะอะไร" in txt:
+            await message.channel.send(f"เรื่อง '{txt}' หรอ บอทว่าน่าจะเพราะ {message.author.display_name} น่ารักเกินไปไง 😂 ล้อเล่นๆ บอทว่าต้องลองดูอีกทีนะ")
+            return
+        if "อะไร" in txt or "คืออะไร" in txt:
+            await message.channel.send(f"'{txt}' หรอ บอทว่าอันนี้ต้องลอง !8ball ดูมั้ย บอทตอบให้เลย 🎱 หรือลองถามใหม่อีกทีสิ บอทฟังอยู่")
+            return
+        if "เมื่อไหร่" in txt or "เมื่อไร" in txt:
+            await message.channel.send(f"เมื่อไหร่หรอ น่าจะเร็วๆ นี้แหละ {message.author.display_name} ใจเย็นๆ นะ ⏰")
+            return
+        if "ที่ไหน" in txt or "ที่ใหน" in txt:
+            await message.channel.send(f"ที่ไหนหรอ น่าจะแถวนี้แหละ ลองไปดูใน #play-game สิ 🎮")
+            return
+        if "ยังไง" in txt or "ทำยังไง" in txt:
+            await message.channel.send(f"ทำแบบนี้สิ {message.author.display_name} ลองพิมพ์ !funhelp ดูสิ มีบอกหมดเลยครับ")
+            return
+        if "ใช่ไหม" in txt or "ใช่ป่ะ" in txt or "มั้ย" in txt or "ไหม" in txt or "ป่ะ" in txt:
+            await message.channel.send(_r.choice([f"ใช่เลย {message.author.display_name} บอทว่าชัวร์ 💯", f"ไม่น่าใช่หรอก ลองคิดอีกทีสิ 🤔", f"50/50 อ่ะ บอทก็ไม่ชัวร์เหมือนกัน 😅"]))
+            return
+        if "เบื่อ" in txt:
+            await message.channel.send(f"เบื่อหรอ {message.author.display_name} มาลอง !slot กันมั้ย สนุกนะ 🎰 หรือ !pokdeng ก็ได้")
+            return
+        if "อกหัก" in txt or "เศร้า" in txt or "เสียใจ" in txt:
+            await message.channel.send(f"โอ๋ๆ {message.author.display_name} ไม่เป็นไรนะ กอดๆ 🤗 บอทอยู่ตรงนี้แล้ว ไม่ทิ้งหรอก")
+            return
+        if "ชอบ" in txt:
+            await message.channel.send(f"ชอบหรอ ดีเลยย บอทก็ชอบ {message.author.display_name} เหมือนกันนะ 💕")
+            return
+        if "สวย" in txt or "หล่อ" in txt or "น่ารัก" in txt:
+            await message.channel.send(f"ใช่เลย {message.author.display_name} น่ารักมากๆ เลยวันนี้ ✨")
+            return
+        # ถามอะไรก็ตอบตรงๆ ไม่มั่ว
+        if not message.content.startswith("!"):
+            # Fallback AI: ตอบตามข้อความ
+            await message.channel.send(f"อ๋อ เรื่อง '{txt}' หรอ บอทเข้าใจนะ {message.author.display_name} เล่าต่อหน่อยสิ บอทฟังอยู่ 🥺")
+            return
     await bot.process_commands(message)
 
 bot.run(TOKEN)
