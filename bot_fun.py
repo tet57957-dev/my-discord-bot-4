@@ -63,14 +63,12 @@ async def love_cmd(ctx, member: discord.Member = None):
 
 @bot.command(name="funhelp")
 async def funhelp_cmd(ctx):
-    embed = discord.Embed(title="🎮 บอทสนุก - rreqzn3l", description="สมาชิกทุกคนใช้ได้ | แอดมินก็ใช้ได้ | ทั้งหมด 47 คำสั่ง", color=0x2b2d31)
-    embed.add_field(name="🎮 เล่นเกม (1)", value="!fortune/!ดวง ดูดวง | !slot/!สล็อต สล็อต | !coin โยนเหรียญ | !8ball ถามตอบ | !love เช็คความรัก", inline=False)
-    embed.add_field(name="🎮 เล่นเกม (2)", value="!lottery/!หวย หวย | !random/!สุ่ม สุ่ม | !dream/!ฝัน ทำนายฝัน | !food สุ่มอาหาร | !movie สุ่มหนัง | !randnum สุ่มเลข | !vote โหวต", inline=False)
-    embed.add_field(name="💬 คุยกับบอท", value="!chat/!คุยต่อ คุยต่อ | !stopchat/!เลิกคุย หยุดคุย | !lonely/!เหงา เหงา | !hug/!กอด กอด | !joke/!มุก มุก | !song/!เพลง เพลง | !sorry/!ขอโทษ ขอโทษ", inline=False)
-    embed.add_field(name="💕 น่ารัก", value="!hi/!ทัก ทัก | !loveyou/!บอกรัก บอกรัก | !missyou/!คิดถึง คิดถึง | !goodnight/!ฝันดี ฝันดี | !cheer/!เชียร์ เชียร์ | !praise/!ชม ชม | !roast/!ด่า แซว", inline=False)
-    embed.add_field(name="👋 ทักทาย", value="!hello/!สวัสดี สวัสดี | !morning เช้า | !night ก่อนนอน | !time/!เวลา เวลา | !invite/!ชวน ชวน | !sleep/!นอน นอน | !eat/!กิน กิน | !travel/!เที่ยว เที่ยว | !goodluck/!โชคดี โชคดี | !laugh หัวเราะ | !cry ร้อง", inline=False)
-    embed.add_field(name="🎲 เกมเพิ่ม", value="!rps เป่ายิ้งฉุบ | !dice ทอยลูกเต๋า | !guess 1-10 ทายเลข | !truth ความจริง | !dare ท้าทาย | !spin วงล้อ | !quiz ตอบคำถาม | !roulette รูเล็ต | !blackjack แบล็คแจ็ค | !highlow สูงต่ำ | !pokdeng ป๊อกเด้ง", inline=False)
-    embed.add_field(name="💡 วิธีใช้", value="พิมพ์ในห้อง #chat ได้เลย ไม่ต้องเป็นแอดมิน | !chat แล้วพิมพ์อะไรก็ได้ บอทตอบให้เลย", inline=False)
+    embed = discord.Embed(title="🎮 คำสั่งทั้งหมด - Bot Fun (rreqzn3l)", description="ทั้งหมด 47 คำสั่ง | สมาชิกใช้ได้ | แอดมินก็ใช้ได้", color=0x2b2d31)
+    embed.add_field(name="🎮 เล่นเกม", value="!fortune - ดูดวงวันนี้\n!slot - สล็อต\n!coin - โยนเหรียญ\n!8ball คำถาม - ถามแล้วตอบ\n!love @คน - เช็คความรัก\n!lottery - สุ่มเลขหวย\n!random ชา กาแฟ - สุ่มเลือก\n!dream เรื่อง - ทำนายฝัน\n!food - สุ่มอาหาร\n!movie - สุ่มหนัง\n!randnum 1 100 - สุ่มเลข\n!vote เรื่อง - โหวต", inline=False)
+    embed.add_field(name="🎲 เกมเพิ่ม", value="!rps ค้อน/กรรไกร/กระดาษ - เป่ายิ้งฉุบ\n!dice - ทอยลูกเต๋า\n!guess 1-10 - ทายเลข\n!truth - เกมความจริง\n!dare - เกมท้าทาย\n!spin - วงล้อ\n!quiz - ตอบคำถาม\n!roulette - รูเล็ต\n!blackjack - แบล็คแจ็ค\n!highlow สูง/ต่ำ - สูงต่ำ\n!pokdeng - ป๊อกเด้ง", inline=False)
+    embed.add_field(name="💬 คุยกับบอท", value="!chat - เริ่มคุยกับบอท\n!stopchat - หยุดคุย\n!lonely - เหงา ชวนเล่น\n!hug @คน - กอดเพื่อน\n!joke - เล่นมุก\n!song - แนะนำเพลง\n!sorry @คน - ขอโทษ", inline=False)
+    embed.add_field(name="💕 น่ารัก / ทักทาย", value="!hi - ทักทาย\n!loveyou @คน - บอกรัก\n!missyou @คน - คิดถึง\n!goodnight - บอกฝันดี\n!cheer @คน - เชียร์\n!praise @คน - ชม\n!roast @คน - แซว\n!hello - สวัสดี\n!morning - ทักเช้า\n!night - ก่อนนอน\n!time - ดูเวลา\n!sleep - ไปนอน\n!eat - กินข้าว\n!travel - เที่ยว\n!goodluck - โชคดี\n!laugh - หัวเราะ\n!cry - ร้อง", inline=False)
+    embed.add_field(name="💡 วิธีใช้", value="พิมพ์ในห้อง #chat ได้เลย ไม่ต้องเป็นแอดมิน", inline=False)
     await ctx.send(embed=embed)
 
 # --- คำสั่งเล่นเกมเพิ่ม สำคัญๆ ---
