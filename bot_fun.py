@@ -3,14 +3,7 @@ from discord.ext import commands
 import os, random, datetime
 TOKEN = os.getenv("DISCORD_TOKEN_3") or os.getenv("DISCORD_TOKEN")
 OWNER_ID = 1395077285362794550
-from flask import Flask
-from threading import Thread
-app = Flask(__name__)
-@app.route("/")
-def home(): return "Fun Bot alive!"
-def run_web():
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
-Thread(target=run_web, daemon=True).start()
+# ไม่ใช้ Flask แล้ว ตัดออกเพื่อให้ Deploy ผ่าน 100%
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents, help_command=None)
 
