@@ -161,7 +161,7 @@ async def randnum_cmd(ctx, a: int = 1, b: int = 100):
 @bot.command(name="vote")
 async def vote_cmd(ctx, *, txt=None): await ctx.send(f"📊 โหวต: {txt or 'เรื่องที่โหวต'} 👍 = เห็นด้วย / 👎 = ไม่เห็นด้วย")
 @bot.command(name="chat")
-async def chat_cmd(ctx): await ctx.send("💬 อยากคุยกับบอทหรอ 🥺 พิมพ์ !คุยต่อ เลยครับ")
+async def chat_cmd(ctx): await chat_on_cmd(ctx)
 @bot.command(name="hug")
 async def hug_cmd(ctx, member: discord.Member = None):
     if not member: await ctx.send("🤗 กอดตัวเองก่อนนะ"); return
@@ -277,5 +277,51 @@ async def pokdeng_cmd(ctx):
     elif us<bs: res="😅 คุณแพ้!"
     else: res="🤝 เสมอ!"
     await ctx.send(f"🃏 ป๊อกเด้ง\nคุณ: {u_str} = {us} แต้ม {upok} {udeng}\nบอท: {b_str} = {bs} แต้ม {bPok} {bdeng}\n{res}")
+
+# --- ระบบคุยต่อ ---
+chat_sessions = set()
+@bot.command(name="คุยต่อ")
+async def chat_on_cmd(ctx):
+    chat_sessions.add(ctx.author.id)
+    import random as _r
+    cute = [f"หืมม อยากคุยกับบอทหรอ 🥺 มาๆ มาคุยกันหน่อย {ctx.author.display_name} คิดถึงอยู่พอดีเลย 💕", f"เย้! {ctx.author.display_name} มาหาบอทแล้วว เหงาเหมือนกันเลย มาคุยกันนะ 🤗", f"อุ้ย {ctx.author.display_name} มาอยู่กับบอทแล้วหรอ ดีใจจังเลย ✨ พิมพ์อะไรมาก็ได้ บอทอยู่ตรงนี้แล้วนะ"]
+    await ctx.send(_r.choice(cute) + "\nพิมพ์อะไรมาก็ได้ บอทตอบให้เลยครับ พิมพ์ `!เลิกคุย` เพื่อหยุดนะ")
+
+@bot.command(name="เลิกคุย")
+async def chat_off_cmd(ctx):
+    chat_sessions.discard(ctx.author.id)
+    await ctx.send(f"โอเค {ctx.author.display_name} เลิกคุยแล้วนะ ไว้คุยกันใหม่นะ 🥺💕")
+
+@bot.command(name="stopchat")
+async def stopchat_cmd(ctx):
+    await chat_off_cmd(ctx)
+
+@bot.event
+async def on_message(message):
+    if message.author.bot:
+        return
+    # ถ้าด่าบอท ด่ากลับเลย
+    txt_lower = message.content.lower()
+    insults = ["โง่","ควาย","กาก","ไอบอท","ไอ้บอท","บอทโง่","บอทกาก","บอทควาย","ปัญญาอ่อน","noob","ขยะ","ห่วย","กระจอก"]
+    if any(w in txt_lower for w in insults):
+        import random as _r
+        roasts = [f"ว่าใครโง่ {message.author.display_name} ดูตัวเองก่อนมั้ย 😂", f"อุ้ยแรงจัง แพ้ !slot มาแล้วหัวร้อนหรอ 🤣", f"โง่แล้วไง แต่บอทตอบได้ไวกว่าเธอนะ 😜", f"ด่าบอทแบบนี้ เดี๋ยวไม่ให้เล่น !pokdeng เลยนะ 😤", f"ควายตรงไหน ดูคะแนน !love ของเธอก่อนมั้ย 0% นะ 💀", f"กากหรอ งั้นมา !rps กันหน่อยมั้ย กล้าเปล่า ✊"]
+        await message.channel.send(_r.choice(roasts))
+        return
+    # ถ้าอยู่ในโหมดคุยต่อ และไม่ได้พิมพ์คำสั่ง
+    if message.author.id in chat_sessions and not message.content.startswith("!"):
+        import random as _r
+        txt = message.content
+        replies = [f"หืมม เรื่อง '{txt}' น่าสนใจจังเลย เล่าอีกสิ บอทฟังอยู่ 🥺💕", f"เห้ยย จริงหรอ เล่าต่อหน่อยสิ บอทอยากรู้ 🤔✨", f"เข้าใจเลยย มันก็แบบนั้นแหละ กอดๆ นะ 🤗", f"555555 จริงด้วย น่ารักจังเลย 😂💕", f"โอ้โหห สุดยอดเลยย เก่งมากเลย ✨", f"อ๋อออ แบบนี้นี่เอง มาคุยกันต่อนะ บอทไม่หนีไปไหนหรอก 🥺"]
+        # ถ้าถามว่าทำไร
+        if "ทำไร" in txt or "ทำอะไร" in txt:
+            await message.channel.send("บอทอยู่ตรงนี้ไง คุยกับเธออยู่เนี่ย 🥺 ทำไรอยู่หรอ เล่าหน่อยสิ")
+            return
+        if "เหงา" in txt:
+            await message.channel.send("เหงาหรอ มาอยู่นี่แล้วไง ไม่ทิ้งหรอก 🤗 ไม่มีอะไรเล่นหรอ มาลอง !slot กันมั้ย 🎰")
+            return
+        await message.channel.send(_r.choice(replies))
+        return
+    await bot.process_commands(message)
 
 bot.run(TOKEN)
